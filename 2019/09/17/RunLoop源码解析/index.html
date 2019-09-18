@@ -7,23 +7,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 <link rel="canonical" href="http://yoursite.com/2019/09/17/RunLoop源码解析/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<meta name="description" content="###RunLoop源码解析 ####CHECK_FOR_FORK()函数与Fork函数解析: 为什么要提前了解CHECK_FOR_FORK()函数？因为在阅读CFRunLoop源码中，很多方法的实现都调用了该方法。 #####Fork函数解析:wiki: Fork ######wiki重点内容摘抄： 如果进程需要启动另一个程序的可执行文件，它需要fork来创建一个自身的副本。然后由该副本即”子进">
+<meta name="description" content="RunLoop源码解析CHECK_FOR_FORK()函数与Fork函数解析:为什么要提前了解CHECK_FOR_FORK()函数？因为在阅读CFRunLoop源码中，很多方法的实现都调用了该方法。 Fork函数解析:wiki: Fork######wiki重点内容摘抄： 如果进程需要启动另一个程序的可执行文件，它需要fork来创建一个自身的副本。然后由该副本即”子进程”调用exec。Fork操作">
 <meta property="og:type" content="website">
 <meta property="og:title" content="RunLoop源码解析">
 <meta property="og:url" content="http://yoursite.com/2019/09/17/RunLoop源码解析/index.html">
 <meta property="og:site_name" content="Samueler">
-<meta property="og:description" content="###RunLoop源码解析 ####CHECK_FOR_FORK()函数与Fork函数解析: 为什么要提前了解CHECK_FOR_FORK()函数？因为在阅读CFRunLoop源码中，很多方法的实现都调用了该方法。 #####Fork函数解析:wiki: Fork ######wiki重点内容摘抄： 如果进程需要启动另一个程序的可执行文件，它需要fork来创建一个自身的副本。然后由该副本即”子进">
+<meta property="og:description" content="RunLoop源码解析CHECK_FOR_FORK()函数与Fork函数解析:为什么要提前了解CHECK_FOR_FORK()函数？因为在阅读CFRunLoop源码中，很多方法的实现都调用了该方法。 Fork函数解析:wiki: Fork######wiki重点内容摘抄： 如果进程需要启动另一个程序的可执行文件，它需要fork来创建一个自身的副本。然后由该副本即”子进程”调用exec。Fork操作">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://www.gravatar.com/avatar/3569df09228cfa8e0e4f182b63514846?s=160">
-<meta property="og:updated_time" content="2019-09-17T09:49:43.026Z">
+<meta property="og:updated_time" content="2019-09-18T04:04:19.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RunLoop源码解析">
-<meta name="twitter:description" content="###RunLoop源码解析 ####CHECK_FOR_FORK()函数与Fork函数解析: 为什么要提前了解CHECK_FOR_FORK()函数？因为在阅读CFRunLoop源码中，很多方法的实现都调用了该方法。 #####Fork函数解析:wiki: Fork ######wiki重点内容摘抄： 如果进程需要启动另一个程序的可执行文件，它需要fork来创建一个自身的副本。然后由该副本即”子进">
+<meta name="twitter:description" content="RunLoop源码解析CHECK_FOR_FORK()函数与Fork函数解析:为什么要提前了解CHECK_FOR_FORK()函数？因为在阅读CFRunLoop源码中，很多方法的实现都调用了该方法。 Fork函数解析:wiki: Fork######wiki重点内容摘抄： 如果进程需要启动另一个程序的可执行文件，它需要fork来创建一个自身的副本。然后由该副本即”子进程”调用exec。Fork操作">
 <meta name="twitter:image" content="https://www.gravatar.com/avatar/3569df09228cfa8e0e4f182b63514846?s=160">
 <link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet">
 <link href="/styles.e987407a0a9d77c7ba00.css" rel="stylesheet">
 <link rel="stylesheet" href="/theme.6814db2ccf672c87c4fb.css">
-<script src="/config.f669471ecc4305d165bf.js"></script>
+<script src="/config.75164e714b14f2365166.js"></script>
 </head>
 <body lang="en">
 <is-a></is-a>
